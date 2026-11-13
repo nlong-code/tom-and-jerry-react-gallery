@@ -1,63 +1,26 @@
 
-import React from "react";
-import Image from "./components/Image";
-import "./App.css";
+import './app.css';
 
-import jerryImage from "./assets/hero.png";
+import Image from './components/Image';
 
-// Student: Norma Long
-// Assignment: Reusable React Image Component
-// Date: November 9, 2026
+import jerry from './assets/jerry.png';
+import tom from './assets/tom.png';
+import tomAndJerry from './assets/tom-and-jerry.png';
+import logo from './assets/tom-and-jerry-logo.png';
 
 function App() {
-  const cartoonImages = [
-    {
-      source: jerryImage,
-      width: "100%",
-      alt: "Jerry the mouse",
-      caption: "Jerry the Mouse",
-    },
-    {
-      source: "https://image.pngaaa.com/851/1876851-middle.png",
-      width: "100%",
-      alt: "Tom the gray cat",
-      caption: "Tom the Cat",
-    },
-    {
-      source: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Tom_and_Jerry_art_in_MultiVersus.png",
-      width: "100%",
-      alt: "Tom and Jerry together",
-      caption: "Tom and Jerry Together",
-    },
-  ];
-
   return (
-    <main className="page">
-      <header className="hero">
-        <h1>Tom &amp; Jerry</h1>
-        <p>
-          Welcome to my favorite cartoon gallery!
-          Enjoy these classic characters and their funny adventures.
-        </p>
-      </header>
+    <div className="app">
+      <h1>Tom and Jerry Image Gallery</h1>
+      <p>My favorite childhood cartoon!</p>
 
-      <section className="gallery">
-        {cartoonImages.map((item) => (
-          <article className="image-card" key={item.caption}>
-            <Image
-              source={item.source}
-              width={item.width}
-              alt={item.alt}
-            />
-            <h2>{item.caption}</h2>
-          </article>
-        ))}
-      </section>
-
-      <footer>
-        <p>Created by Norma Long | React Assignment</p>
-      </footer>
-    </main>
+      <div className="gallery">
+        <Image src={jerry} alt="Jerry Mouse" />
+        <Image src={tom} alt="Tom Cat" />
+        <Image src={tomAndJerry} alt="Tom and Jerry together" />
+        <Image src={logo} alt="Tom and Jerry logo" />
+      </div>
+    </div>
   );
 }
 
